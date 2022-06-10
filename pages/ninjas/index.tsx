@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 type Props = {};
 
 const index: NextPage = (props: Props) => {
-  return <div>index</div>;
+  return <div>NINJAS COMPOP</div>;
 };
 
 export default index;
