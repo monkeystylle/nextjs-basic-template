@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import type { NextPage } from 'next';
 import Navbar from '../components/Navbar';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
-    <PageWrapper>
-      <Title>Homepage</Title>
-      <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-        ducimus deserunt modi excepturi voluptas recusandae?
-      </Text>
-      <Button>See Ninja Listing</Button>
-    </PageWrapper>
+    <>
+      <Head>
+        <title>Ninja List | Home</title>
+        <meta name="keywords" content="ninjas" />
+      </Head>
+      <PageWrapper>
+        <Title>Homepage</Title>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+          ducimus deserunt modi excepturi voluptas recusandae?
+        </Text>
+        <Button>See Ninja Listing</Button>
+      </PageWrapper>
+    </>
   );
 };
 
@@ -29,7 +36,7 @@ const Text = styled.p`
 `;
 
 const Button = styled.button`
-  display: block;
+  display: inline;
   width: 150px;
   padding: 8px 0;
   margin: 20px auto;

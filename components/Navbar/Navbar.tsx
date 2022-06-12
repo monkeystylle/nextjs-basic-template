@@ -1,16 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const router = useRouter();
+
   return (
     <NavbarWrapper>
       <Nav>
-        <Logo>
-          <h1>Ninja List</h1>
-        </Logo>
+        <LogoWrapper>
+          <Image
+            onClick={() => router.push('/')}
+            src="/logo.png"
+            width={128}
+            height={77}
+          />
+        </LogoWrapper>
         <Link href="/">
           <a>HOME</a>
         </Link>
@@ -42,8 +51,16 @@ const Nav = styled.nav`
   font-size: 1.5rem;
 `;
 
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   font-size: 2rem;
+  height: 100%;
+`;
+
+const ImageLogo = styled.img`
+  /* object-fit: contain; */
+  /* height: 77px; */
+  width: 128px;
+  object-position: -40px 300%;
 `;
 
 export default Navbar;
